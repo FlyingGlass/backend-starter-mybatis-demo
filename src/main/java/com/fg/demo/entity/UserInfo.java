@@ -1,6 +1,6 @@
-package com.fly.demo.entity;
+package com.fg.demo.entity;
 
-import com.fly.mybatis.entity.BaseDO;
+import com.fg.mybatis.entity.BaseDO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;

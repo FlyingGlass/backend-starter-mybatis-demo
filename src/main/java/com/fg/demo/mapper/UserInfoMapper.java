@@ -1,9 +1,8 @@
-package com.fly.demo.mapper;
+package com.fg.demo.mapper;
 
-import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.fly.demo.entity.UserInfo;
-import com.fly.mybatis.cache.MybatisRedisCache;
+import com.fg.demo.entity.UserInfo;
+import com.fg.mybatis.cache.MybatisRedisCache;
 import org.apache.ibatis.annotations.CacheNamespace;
 import org.apache.ibatis.annotations.Property;
 

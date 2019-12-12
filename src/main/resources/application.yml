@@ -87,7 +87,7 @@ spring:
 mybatis-plus:
   # classpath要加上后面的*，表示通配符，匹配任意路径
   mapper-locations: classpath*:/mapper/*Mapper.xml
-  typeAliasesPackage: com.fly.demo.entity
+  typeAliasesPackage: com.fg.demo.entity
   configuration:
     map-underscore-to-camel-case: true
     cache-enabled: true # 开启xml缓存

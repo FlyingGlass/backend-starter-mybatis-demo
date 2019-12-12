@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.fly</groupId>
+    <groupId>com.fg</groupId>
     <artifactId>backend-starter-mybatis-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>${project.artifactId}</name>
@@ -23,7 +23,7 @@
     <dependencies>
 
         <dependency>
-            <groupId>com.fly</groupId>
+            <groupId>com.fg</groupId>
             <artifactId>backend-starter-mybatis</artifactId>
             <version>1.0.0</version>
         </dependency>
