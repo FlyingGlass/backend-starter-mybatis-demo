@@ -1,6 +1,6 @@
-package com.fg.demo.entity;
+package com.github.flyingglass.demo.entity;
 
-import com.fg.mybatis.entity.BaseDO;
+import com.github.flyingglass.mybatis.config.BaseDO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;

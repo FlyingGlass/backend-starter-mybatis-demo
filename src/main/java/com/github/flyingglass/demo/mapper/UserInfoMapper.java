@@ -1,8 +1,8 @@
-package com.fg.demo.mapper;
+package com.github.flyingglass.demo.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.fg.demo.entity.UserInfo;
-import com.fg.mybatis.cache.MybatisRedisCache;
+import com.github.flyingglass.demo.entity.UserInfo;
+import com.github.flyingglass.mybatis.cache.MybatisRedisCache;
 import org.apache.ibatis.annotations.CacheNamespace;
 import org.apache.ibatis.annotations.Property;
 
@@ -15,10 +15,11 @@ import org.apache.ibatis.annotations.Property;
  * @since 2019-07-15
  */
 @CacheNamespace(
+//        implementation = MybatisRedisCache.class
         implementation = MybatisRedisCache.class,
         properties = { @Property(
                 name = "flushInterval",
-                value = "5000"
+                value = "10000"
         )}
 )
 //@DS("slave_1")

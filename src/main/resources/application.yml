@@ -1,8 +1,8 @@
 mysql:
   host: localhost
   port: 3306
-  username: dev
-  password: 123456
+  username: root
+  password: root123
 
 redis:
   host: localhost
@@ -65,18 +65,18 @@ spring:
           username: ${mysql.username}
           password: ${mysql.password}
           driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://${mysql.host}:${mysql.port}/master_db?useUnicode=true&characterEncoding=utf-8
+          url: jdbc:mysql://${mysql.host}:${mysql.port}/master_db?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
 
         slave_1:
           username: ${mysql.username}
           password: ${mysql.password}
           driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://${mysql.host}:${mysql.port}/slave_db?useUnicode=true&characterEncoding=utf-8
+          url: jdbc:mysql://${mysql.host}:${mysql.port}/slave_db?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
 
 #        phoenix:
 #          username:
 #          password:
-#          url: jdbc:phoenix:znode01,znode02,znode03:2181
+#          url: jdbc:phoenix:dnode28,dnode29,dnode30:2181
 #          driver-class-name: org.apache.phoenix.jdbc.PhoenixDriver
 #          druid:
 #            filters: stat
