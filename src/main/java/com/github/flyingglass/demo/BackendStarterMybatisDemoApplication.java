@@ -3,7 +3,6 @@ package com.github.flyingglass.demo;
 import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.github.flyingglass.demo.entity.TestInfo;
-import com.github.flyingglass.demo.entity.UserInfo;
 import com.github.flyingglass.demo.mapper.TestInfoMapper;
 import com.github.flyingglass.demo.mapper.UserInfoMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -12,7 +11,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-import java.sql.Timestamp;
 
 /**
  * @author Administrator
