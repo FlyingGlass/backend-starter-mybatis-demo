@@ -48,10 +48,11 @@ public class BackendStarterMybatisDemoApplication {
         mapper1.selectList(Wrappers.emptyWrapper());
 
         TestInfo testInfo = new TestInfo()
-                .setId(101L)
+                .setId(102L)
                 .setName("101");
 
 
+        // Phoenix upsert test
         mapper1.upsert(testInfo);
 
         mapper1.selectList(Wrappers.emptyWrapper());
