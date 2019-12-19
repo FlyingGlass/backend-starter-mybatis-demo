@@ -16,6 +16,20 @@
     <description>Demo project for Spring Boot</description>
     <packaging>jar</packaging>
 
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/FlyingGlass/mybatis-plus-starter-demo/tree/master</url>
+        <connection>scm:git:git@github.com:FlyingGlass/mybatis-plus-starter-demo.git</connection>
+        <developerConnection>scm:git:git@github.com:FlyingGlass/mybatis-plus-starter-demo.git</developerConnection>
+    </scm>
+
     <properties>
         <java.version>1.8</java.version>
         <spring-boot.version>2.2.2.RELEASE</spring-boot.version>
@@ -60,10 +74,10 @@
             </exclusions>
         </dependency>
 
-        <dependency>
-            <groupId>joda-time</groupId>
-            <artifactId>joda-time</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>joda-time</groupId>-->
+<!--            <artifactId>joda-time</artifactId>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>mysql</groupId>
