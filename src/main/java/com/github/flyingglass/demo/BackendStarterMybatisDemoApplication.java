@@ -3,6 +3,7 @@ package com.github.flyingglass.demo;
 import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.github.flyingglass.demo.entity.TestInfo;
 import com.github.flyingglass.demo.entity.UserInfo;
@@ -16,6 +17,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import javax.annotation.Resource;
 import java.sql.Wrapper;
 import java.util.ArrayList;
 import java.util.List;
@@ -43,36 +45,44 @@ public class BackendStarterMybatisDemoApplication {
          */
         final int size = 100;
 
-        // Redis Cache Test
+//        // Redis Cache Test
         UserInfoMapper mapper = applicationContext.getBean("userInfoMapper", UserInfoMapper.class);
+//
+//        // Batch Test
+//        UserInfoServiceImpl service = applicationContext.getBean("userInfoServiceImpl", UserInfoServiceImpl.class);
+//
+//
+//        List<UserInfo> list = new ArrayList<>();
+//        for (int i = 0; i < size; i++) {
+//            UserInfo userInfo = new UserInfo().setUsername("u"+i).setPassword("p"+i);
+//            userInfo.setId(Long.valueOf(i));
+//            list.add(userInfo);
+//        }
+//        service.saveOrUpdateBatch(list);
+//
+//
+//
+//        mapper.selectList(Wrappers.emptyWrapper());
+//
+//        // cache
+//        mapper.selectList(Wrappers.emptyWrapper());
+//
+//
+//        // cache
+//        mapper.selectList(Wrappers.emptyWrapper());
 
-        // Batch Test
-        UserInfoServiceImpl service = applicationContext.getBean("userInfoServiceImpl", UserInfoServiceImpl.class);
+        // Page
+        Page<UserInfo> page1 = new Page<>(2, 10);
 
-
-        List<UserInfo> list = new ArrayList<>();
-        for (int i = 0; i < size; i++) {
-            UserInfo userInfo = new UserInfo().setUsername("u"+i).setPassword("p"+i);
-            userInfo.setId(Long.valueOf(i));
-            list.add(userInfo);
-        }
-        service.saveOrUpdateBatch(list);
-
-
-
-        mapper.selectList(Wrappers.emptyWrapper());
-
-        // cache
-        mapper.selectList(Wrappers.emptyWrapper());
-
-
-        // cache
-        mapper.selectList(Wrappers.emptyWrapper());
+        mapper.selectPage(page1, Wrappers.emptyWrapper());
 
 
         /**
          * Phoenix
          */
+
+//        PaginationInterceptor interceptor = applicationContext.getBean("paginationInterceptor", PaginationInterceptor.class);
+//        interceptor.setDialectClazz("com.github.flyingglass.phoenix.api.PhoenixDialect");
 
         // Phoenix Cache Test
         TestInfoMapper mapper1 = applicationContext.getBean("testInfoMapper", TestInfoMapper.class);
@@ -86,7 +96,7 @@ public class BackendStarterMybatisDemoApplication {
         for (int i = 0; i < size; i++) {
             TestInfo testInfo = new TestInfo()
                     .setId(Long.valueOf(i))
-                    .setName("upsert batch");
+                    .setName("upsert");
             list1.add(testInfo);
         }
         service1.saveBatch(list1);

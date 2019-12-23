@@ -1,5 +1,5 @@
 mysql:
-  host: localhost
+  host: local
   port: 3306
   username: root
   password: root123
@@ -73,16 +73,16 @@ spring:
           driver-class-name: com.mysql.cj.jdbc.Driver
           url: jdbc:mysql://${mysql.host}:${mysql.port}/slave_db?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
 
-#        phoenix:
-#          username:
-#          password:
-#          url: jdbc:phoenix:dnode28,dnode29,dnode30:2181
-#          driver-class-name: org.apache.phoenix.jdbc.PhoenixDriver
-#          druid:
-#            filters: stat
-#            # 开启namespace需要配置
-#            connection-properties:
-#              schema: "\"TEST\""
+        phoenix:
+          username:
+          password:
+          url: jdbc:phoenix:dnode28,dnode29,dnode30:2181
+          driver-class-name: org.apache.phoenix.jdbc.PhoenixDriver
+          druid:
+            filters: stat
+            # 开启namespace需要配置
+            connection-properties:
+              schema: "\"TEST\""
 
 mybatis-plus:
   # classpath要加上后面的*，表示通配符，匹配任意路径
@@ -92,6 +92,10 @@ mybatis-plus:
     map-underscore-to-camel-case: true
     cache-enabled: true # 开启xml缓存
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    interceptors:
+
   global-config:
     db-config:
       id-type: auto
+server:
+  port: 8000
