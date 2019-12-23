@@ -1,7 +1,9 @@
 package com.github.flyingglass.demo;
 
 import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.github.flyingglass.demo.entity.TestInfo;
 import com.github.flyingglass.demo.entity.UserInfo;
 import com.github.flyingglass.demo.mapper.TestInfoMapper;
@@ -14,6 +16,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import java.sql.Wrapper;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -103,6 +106,14 @@ public class BackendStarterMybatisDemoApplication {
         mapper1.selectList(Wrappers.emptyWrapper());
 
 
+        // Page
+        Page<TestInfo> page = new Page<>(2, 10);
+        IPage<TestInfo> result = mapper1.selectPage(page, Wrappers.emptyWrapper());
+
+        for (TestInfo t :
+                result.getRecords()) {
+            log.info(t.toString());
+        }
 
     }
 
