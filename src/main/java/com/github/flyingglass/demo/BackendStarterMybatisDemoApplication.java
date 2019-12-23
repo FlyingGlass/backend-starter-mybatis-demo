@@ -16,6 +16,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
 
 import javax.annotation.Resource;
 import java.sql.Wrapper;
@@ -32,6 +33,11 @@ import java.util.List;
         exclude = DruidDataSourceAutoConfigure.class
 )
 public class BackendStarterMybatisDemoApplication {
+
+    @Bean
+    PaginationInterceptor paginationInterceptor() {
+        return new PaginationInterceptor().setDialectClazz("com.github.flyingglass.phoenix.api.PhoenixDialect");
+    }
 
     public static void main(String[] args) {
         // 设置HADOOP_HOME路径
