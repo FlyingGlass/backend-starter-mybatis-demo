@@ -31,6 +31,10 @@ import java.util.List;
 )
 public class MybatisPlusStarterDemoApplication {
 
+    /**
+     * 配置分页插件，否则Phoenix分页会报找不到DBType
+     * @return PaginationInterceptor
+     */
     @Bean
     PaginationInterceptor paginationInterceptor() {
         return new PaginationInterceptor().setDialectClazz("com.github.flyingglass.phoenix.api.PhoenixDialect");
