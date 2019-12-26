@@ -1,9 +1,6 @@
 package com.github.flyingglass.demo.config;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import javax.sql.DataSource;
 
 /**
  * @author: fly
