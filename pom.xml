@@ -108,6 +108,13 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <dependency>
+            <groupId>com.baqend</groupId>
+            <artifactId>bloom-filter</artifactId>
+            <version>1.0.7</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -170,7 +177,7 @@
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                     <manifestEntries>
-                                        <Main-Class>com.github.flyingglass.demo.BackendStarterMybatisDemoApplication</Main-Class>
+                                        <Main-Class>com.github.flyingglass.demo.MybatisPlusStarterDemoApplication</Main-Class>
                                     </manifestEntries>
                                 </transformer>
                             </transformers>

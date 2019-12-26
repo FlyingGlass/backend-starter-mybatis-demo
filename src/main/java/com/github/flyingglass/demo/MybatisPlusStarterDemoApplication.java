@@ -10,7 +10,6 @@ import com.github.flyingglass.demo.entity.UserInfo;
 import com.github.flyingglass.demo.mapper.TestInfoMapper;
 import com.github.flyingglass.demo.mapper.UserInfoMapper;
 import com.github.flyingglass.demo.service.TestInfoServiceImpl;
-import com.github.flyingglass.demo.service.UserInfoServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -18,8 +17,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
-import javax.annotation.Resource;
-import java.sql.Wrapper;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,7 +29,7 @@ import java.util.List;
 @SpringBootApplication(
         exclude = DruidDataSourceAutoConfigure.class
 )
-public class BackendStarterMybatisDemoApplication {
+public class MybatisPlusStarterDemoApplication {
 
     @Bean
     PaginationInterceptor paginationInterceptor() {
@@ -43,7 +40,7 @@ public class BackendStarterMybatisDemoApplication {
         // 设置HADOOP_HOME路径
         System.setProperty("hadoop.home.dir", System.getProperty("user.dir"));
 
-        ApplicationContext applicationContext = SpringApplication.run(BackendStarterMybatisDemoApplication.class, args);
+        ApplicationContext applicationContext = SpringApplication.run(MybatisPlusStarterDemoApplication.class, args);
 
 
         /**
